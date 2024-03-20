@@ -1,21 +1,22 @@
 import styled from 'styled-components';
+import {
+  unexpandedSidebarWidth,
+  expandedSidebarWidth,
+} from '../../config/dimensions';
 
-export const NavSide = styled.nav`
+export const NavSide = styled.div`
+
   background: rgb(255, 255, 255);
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  width: ${(props) => (props.$sidebarExpanded ? 240 : 64)}px;
+  width: ${(props) => (props.$sidebarExpanded ? expandedSidebarWidth : unexpandedSidebarWidth)};
   transition: width 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  position: fixed;
-  left: 0;
-  top: 56px;
-  bottom: 0;
-  z-index: 0;
+  z-index: 1;
   overflow-y: auto;
   overflow-x: hidden;
-
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 10px -5px, rgba(0, 0, 0, 0.14) 0px 16px 24px 2px
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 10px -5px, rgba(0, 0, 0, 0.14) 0px 16px 24px 2px;
 `;
 
 export const NavSideItem = styled.li`
@@ -28,11 +29,11 @@ export const NavSideItem = styled.li`
   cursor: pointer;
 
   background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.77);
 
-  height: 3rem;
+  height: 48px;
   font-size: 1rem;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+
 
   transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

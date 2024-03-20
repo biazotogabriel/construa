@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-//import { primaryDarkColor } from '../config/colors';
+import { headerHeight } from '../config/dimensions';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
  * {
@@ -10,12 +15,17 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
     background: #fff;
   }
 
-  html, body, #root {
+  html, body, #root, .App {
     height: 100%;
+
+    .middleConteinerApp {
+    display: flex;
+    height: calc(100% - ${headerHeight});
+  }
   }
 
   button {

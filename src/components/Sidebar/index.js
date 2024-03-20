@@ -1,19 +1,19 @@
 import { NavSide, NavSideItem } from './styled';
 import PropTypes from 'prop-types';
 import { sideBarItems } from './const';
-//import { FaHouseUser } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar({ sidebarExpanded }) {
-  // const [open, setOpen] = React.useState(false);
-
   return (
     <NavSide $sidebarExpanded={sidebarExpanded}>
       <ul>
         {sideBarItems.map((item, index) => (
-          <NavSideItem key={index} $sidebarExpanded={sidebarExpanded}>
-            {item.icon}
-            <div>{item.title}</div>
-          </NavSideItem>
+          <Link key={index} to={item.link}>
+            <NavSideItem $sidebarExpanded={sidebarExpanded}>
+              {item.icon}
+              <div>{item.title}</div>
+            </NavSideItem>
+          </Link>
         ))}
       </ul>
     </NavSide>
