@@ -2,12 +2,11 @@ import { DataGrid, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { Conteiner } from './styled';
 import axios from '../../services/axios';
 import { useEffect, useState } from 'react';
-import { GridButton } from '../../components/GridButton';
-import { MdDelete } from 'react-icons/md';
-import { MdEdit } from 'react-icons/md';
 import UserCad from '../../components/UserCad';
 import Loading from '../../components/Loading';
 import { CommonButton } from '../../components/CommonButton';
+import EditGridButton from '../../components/GridButton/EditGridButton';
+import DeleteGridButton from '../../components/GridButton/DeleteGridButton';
 
 export default function User() {
   const [users, setUsers] = useState([]);
@@ -39,12 +38,12 @@ export default function User() {
       width: 150,
       renderCell: (params) => (
         <>
-          <GridButton onClick={() => handleEditUserButton(params.row.userId)}>
-            <MdEdit />
-          </GridButton>
-          <GridButton onClick={() => handleDeleteUserButton(params.row.userId)}>
-            <MdDelete />
-          </GridButton>
+          <EditGridButton
+            onClick={() => handleEditUserButton(params.row.userId)}
+          />
+          <DeleteGridButton
+            onClick={() => handleDeleteUserButton(params.row.userId)}
+          />
         </>
       ),
     },

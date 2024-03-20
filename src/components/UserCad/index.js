@@ -2,12 +2,13 @@ import { Modal } from '../Modal';
 import PropTypes from 'prop-types';
 import { ModalConteiner } from './styled';
 import { useEffect, useState } from 'react';
-import { IoCloseCircleSharp } from 'react-icons/io5';
-import { GridButton } from '../GridButton';
+//import { IoCloseCircleSharp } from 'react-icons/io5';
+//import { GridButton } from '../GridButton';
 import axios from '../../services/axios';
 import Loading from '../Loading';
 import { toast } from 'react-toastify';
 import { CommonButton } from '../CommonButton';
+import CloseGridButton from '../GridButton/CloseGridButton';
 
 export default function UserCad({ close, userId = -1 }) {
   const [isLoading, setIsLoading] = useState(userId > -1);
@@ -79,9 +80,7 @@ export default function UserCad({ close, userId = -1 }) {
           <ModalConteiner>
             <div>
               <h1>Cadastro de Usuário</h1>
-              <GridButton onClick={handleCloseButton}>
-                <IoCloseCircleSharp />
-              </GridButton>
+              <CloseGridButton onClick={handleCloseButton} />
             </div>
             <form onSubmit={handleSaveButton}>
               <label htmlFor="userName">
