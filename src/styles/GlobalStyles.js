@@ -21,6 +21,7 @@ export default createGlobalStyle`
 
   html, body, #root, .App {
     height: 100%;
+    overflow-y: hidden;
 
     .middleConteinerApp {
     display: flex;

@@ -3,7 +3,6 @@ import GlobalStyles from './styles/GlobalStyles';
 import { ToastContainer } from 'react-toastify';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import User from './pages/Usuarios';
 import Compras from './pages/Compras';
 import Estoque from './pages/Estoque';
 import Financeiro from './pages/Financeiro';
@@ -12,6 +11,8 @@ import Obras from './pages/Obras';
 import Page404 from './pages/Page404';
 import CustomRoute from './components/CustomRoute';
 import Login from './pages/Login';
+import PageSuppliers from './pages/Suppliers';
+import UserCons from './components/User/Cons';
 
 export default function App() {
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
@@ -42,11 +43,12 @@ export default function App() {
             }
           >
             <Route path="/compras" element={<Compras />} />
-            <Route path="/users" element={<User />} />
+            <Route path="/users" element={<UserCons />} />
             <Route path="/estoque" element={<Estoque />} />
             <Route path="/financeiro" element={<Financeiro />} />
             <Route path="/obras" element={<Obras />} />
             <Route path="/inicio" element={<Inicio />} />
+            <Route path="/suppliers" element={<PageSuppliers />} />
           </Route>
           <Route
             path="/login"

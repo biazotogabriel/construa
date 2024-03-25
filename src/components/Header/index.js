@@ -26,7 +26,11 @@ export default function Header({
         </button>
       </ExpandButton>
       <SearchInput>
-        <input type="text" placeholder="Digite algo..."></input>
+        <input
+          type="text"
+          name="searchbar"
+          placeholder="Digite algo..."
+        ></input>
       </SearchInput>
       <UserOptionsBar>
         <UserOptionsBarItem>

@@ -1,17 +1,17 @@
-import { Modal } from '../Modal';
-//import './styled.css';
+import FullFillScreen from '../UI/FullFillScreen';
 
 export default function Loading() {
   return (
-    <Modal>
+    <FullFillScreen>
       <span
         style={{
           color: 'white',
           fontSize: '1.5rem',
+          textAlign: 'center',
         }}
       >
         Carregando
       </span>
-    </Modal>
+    </FullFillScreen>
   );
 }
