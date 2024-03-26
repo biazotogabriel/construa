@@ -44,3 +44,16 @@ export const updateUser = async (user) => {
     return false;
   }
 };
+
+export const deleteUser = async (userId) => {
+  try {
+    await axios.delete('/users', { data: { userId } });
+    toast.success(`Usuário deletado com sucesso`);
+    return true;
+  } catch (e) {
+    const data = e.response.data;
+    const errors = data.errors;
+    errors.map((error) => toast.error(error));
+    return false;
+  }
+};

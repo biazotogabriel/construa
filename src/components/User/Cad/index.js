@@ -90,7 +90,9 @@ export default function UserCad({ user = {}, onClose }) {
           name="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <CommonButton onClick={handleSaveButtonClick}>{isSaving ? 'Salvando' : 'Salvar'}</CommonButton>
+        <CommonButton onClick={handleSaveButtonClick} isLoading={isLoading} disabled={isLoading}>
+          {isSaving ? 'Salvando' : 'Salvar'}
+        </CommonButton>
       </Container>
     </Modal>
   );

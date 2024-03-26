@@ -14,7 +14,7 @@ export const Button = styled.button`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
 
-  &:hover {
+  &:hover, &:focus {
     background: rgba(0,0,0,0.15)
   }
 

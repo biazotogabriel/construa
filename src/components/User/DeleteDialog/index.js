@@ -1,38 +1,27 @@
 import PropTypes from 'prop-types';
 import ConfirmDialog from '../../UI/ConfirmDialog';
-import axios from '../../../services/axios';
-import { toast } from 'react-toastify';
 import { useState } from 'react';
+import { deleteUser } from '../../../controllers/users';
 
 export default function UserDeleteDialog({ user, onClose }) {
   const { userId, userName } = user;
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const deleteUser = async () => {
-    try {
-      setIsDeleting(true);
-      await axios.delete('/users', {
-        data: {
-          userId,
-        },
-      });
+  const handleDeleteUserButtonClick = async () => {
+    setIsDeleting(true);
+    if (await deleteUser(userId)) {
       onClose(true);
-      toast.success(`Usuário "${userName}" deletado com sucesso`);
-    } catch (e) {
-      const data = e.response.data;
-      const errors = data.errors;
-      errors.map((error) => toast.error(error));
+    } else {
       onClose();
-    } finally {
-      setIsDeleting(false);
     }
+    setIsDeleting(false);
   };
 
   return (
     <ConfirmDialog
       title="Confirmação"
       message={isDeleting ? `Deletando "${userName}"` : `Deseja realmente deletar o usuário "${userName}"?`}
-      onYes={deleteUser}
+      onYes={handleDeleteUserButtonClick}
       onNo={() => onClose(false)}
       onClose={() => onClose(false)}
     />

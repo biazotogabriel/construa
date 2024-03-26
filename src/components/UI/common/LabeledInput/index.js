@@ -7,8 +7,8 @@ export default function CommonLabeledInput({ label, isLoading, ...props }) {
   useEffect(() => {});
   return (
     <StyledLabel $isLoading={isLoading}>
-      {label}
-      <Input {...props} />
+      <span>{label}</span>
+      <Input {...props} isLoading={isLoading} />
     </StyledLabel>
   );
 }
