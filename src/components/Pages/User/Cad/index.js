@@ -3,12 +3,10 @@ import { useEffect, useState } from 'react';
 import get from 'lodash/get';
 
 import { Container } from './styled';
-//import Loading from '../../Loading';
-//import Modal from '../../UI/Modal';
-import LabeledInput from '../../UI/common/LabeledInput';
-import CommonButton from '../../UI/common/Button';
-import { createUser, getUser, updateUser } from '../../../controllers/users';
-import Modal from '../../UI/Modal';
+import LabeledInput from '../../../UI/common/LabeledInput';
+import CommonButton from '../../../UI/common/Button';
+import { createUser, getUser, updateUser } from '../../../../controllers/user';
+import Modal from '../../../UI/Modal';
 
 export default function UserCad({ user = {}, onClose }) {
   const userId = get(user, 'userId', -1);

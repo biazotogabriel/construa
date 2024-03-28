@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import ConfirmDialog from '../../UI/ConfirmDialog';
+import ConfirmDialog from '../../../UI/ConfirmDialog';
 import { useState } from 'react';
-import { deleteUser } from '../../../controllers/users';
+import { deleteUser } from '../../../../controllers/user';
 
 export default function UserDeleteDialog({ user, onClose }) {
   const { userId, userName } = user;

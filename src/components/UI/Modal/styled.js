@@ -5,6 +5,8 @@ export const Container = styled.div`
   padding: 20px;
   border-radius: 3px;
   min-width: 500px;
+  max-height: 95vh;
+  overflow-y: auto;
 
   transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '200%')} );
   transition: transform 150ms cubic-bezier(0, 0, 0.2, 1);

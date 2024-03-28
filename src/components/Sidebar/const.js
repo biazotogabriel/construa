@@ -13,5 +13,5 @@ export const sideBarItems = [
   { title: 'Obras', icon: <FaHammer />, link: 'obras' },
   { title: 'Financeiro', icon: <FaMoneyBill />, link: 'financeiro' },
   { title: 'Usuários', icon: <FaUser />, link: 'users' },
-  { title: 'Fornecedores', icon: <LiaUserTieSolid />, link: 'suppliers' },
+  { title: 'Pessoas Jurídicas', icon: <LiaUserTieSolid />, link: 'legalEntities' },
 ];

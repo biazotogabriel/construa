@@ -11,8 +11,8 @@ import Obras from './pages/Obras';
 import Page404 from './pages/Page404';
 import CustomRoute from './components/CustomRoute';
 import Login from './pages/Login';
-import PageSuppliers from './pages/Suppliers';
-import UserCons from './components/User/Cons';
+import UserCons from './components/Pages/User/Cons';
+import LegalEntityCons from './components/Pages/LegalEntity/Cons';
 
 export default function App() {
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
@@ -44,16 +44,13 @@ export default function App() {
           >
             <Route path="/compras" element={<Compras />} />
             <Route path="/users" element={<UserCons />} />
+            <Route path="/legalEntities" element={<LegalEntityCons />} />
             <Route path="/estoque" element={<Estoque />} />
             <Route path="/financeiro" element={<Financeiro />} />
             <Route path="/obras" element={<Obras />} />
             <Route path="/inicio" element={<Inicio />} />
-            <Route path="/suppliers" element={<PageSuppliers />} />
           </Route>
-          <Route
-            path="/login"
-            element={<Login handleLoggedIn={handleLoggedIn} />}
-          />
+          <Route path="/login" element={<Login handleLoggedIn={handleLoggedIn} />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <GlobalStyles />

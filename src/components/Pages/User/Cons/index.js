@@ -2,13 +2,13 @@ import { DataGrid, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { Conteiner } from './styled';
 import { useEffect, useState } from 'react';
 import UserCad from '../Cad';
-import Loading from '../../Loading';
-import CommonButton from '../../UI/common/Button';
+import Loading from '../../../Loading';
+import CommonButton from '../../../UI/common/Button';
 import { toast } from 'react-toastify';
 import UserDeleteDialog from '../DeleteDialog';
-import EditIconButton from '../../UI/common/IconButton/EditIconButton';
-import DeleteIconButton from '../../UI/common/IconButton/DeleteIconButton';
-import { getUsers } from '../../../controllers/users';
+import EditIconButton from '../../../UI/common/IconButton/EditIconButton';
+import DeleteIconButton from '../../../UI/common/IconButton/DeleteIconButton';
+import { getUsers } from '../../../../controllers/user';
 
 export default function UserCons() {
   const [users, setUsers] = useState([]);
